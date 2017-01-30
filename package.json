@@ -1,7 +1,9 @@
 {
-  "name": "wordcount",
-  "version": "1.0.0",
-  "bin": "./index.js",
+  "name": "countword",
+  "version": "1.0.1",
+  "bin": {
+    "wordcount": "./index.js"
+  },
   "scripts": {
     "test": "npm run test-default && npm run test-all && npm run test-frequencies && npm run test-parallel",
     "test-default": "node index project.clj",

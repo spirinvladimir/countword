@@ -1,4 +1,4 @@
-(defproject wordcount "1.0.0"
+(defproject wordcount "1.0.1"
 
   :min-lein-version "2.5.3"
 

@@ -5,4 +5,4 @@ target
 .lein-plugins/
 pom.xml
 .DS*
-index.js
+src
