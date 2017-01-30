@@ -1,0 +1,15 @@
+{
+  "name": "wordcount",
+  "version": "1.0.0",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "npm run test-default && npm run test-all && npm run test-frequencies && npm run test-parallel",
+    "test-default": "node index project.clj",
+    "test-all": "node index --all project.clj",
+    "test-frequencies": "node index --frequencies project.clj",
+    "test-parallel": "node index --parallel project.clj",
+    "start": "npm run watch",
+    "build": "lein cljsbuild once",
+    "watch": "lein cljsbuild auto"
+  }
+}
