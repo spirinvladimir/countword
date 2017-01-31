@@ -1,13 +1,14 @@
 (ns wordcount.parallel.core
-    (:require [cljs.nodejs :as nodejs]
-              [wordcount.parallel.split :as split]
-              [wordcount.parallel.worker :as worker]))
+    (:require [wordcount.parallel.split :refer [splitByCPU]]
+              [wordcount.parallel.worker :refer [worker]]
+              [wordcount.input :refer [getData]]))
 
 
-(defn howManyWords [data]
+(defn parallel []
     (let [cluster (js/require "cluster")]
       (if (.-isMaster cluster)
-        (add-watch
+        (let [data (getData)]
+          (add-watch
             (reduce
               (fn [manager data]
                 (let [worker (.fork cluster)]
@@ -20,10 +21,10 @@
                   manager))
               (atom {:wordcount 0
                      :notFinish 0})
-              (split/split data))
-            "ready"
+              (splitByCPU data))
+            "Have a nice day"
             (fn [& args]
-                (let [state (last args)]
-                    (when (= (:notFinish state) 0)
-                        (println (:wordcount state))))))
-        (worker/start cluster))))
+              (let [state (last args)]
+                (when (= (:notFinish state) 0)
+                  (println (:wordcount state)))))))
+        (worker cluster))))

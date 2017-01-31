@@ -1,6 +1,5 @@
 (ns wordcount.input
-    (:require [cljs.nodejs :as nodejs]
-              [clojure.string :as string]))
+    (:require [clojure.string :as string]))
 
 (def argv (drop 2 (js->clj (.-argv js/process))))
 

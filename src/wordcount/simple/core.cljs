@@ -1,15 +1,15 @@
 (ns wordcount.simple.core
-    (:require [wordcount.word :as word]))
+    (:require [wordcount.word :refer [inWord]]))
 
 
-(defn howManyWords [data]
+(defn simple [data]
     (loop [word false
            chars data
            res 0]
         (let [head (first chars)]
           (if (nil? head)
             (println res)
-            (let [ok (word/inWord head)]
+            (let [ok (inWord head)]
               (recur
                 ok
                 (rest chars)

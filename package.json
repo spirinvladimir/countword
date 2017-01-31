@@ -1,15 +1,15 @@
 {
   "name": "countword",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "bin": {
     "wordcount": "./index.js"
   },
   "scripts": {
-    "test": "npm run test-default && npm run test-all && npm run test-frequencies && npm run test-parallel",
-    "test-default": "node index project.clj",
-    "test-all": "node index --all project.clj",
-    "test-frequencies": "node index --frequencies project.clj",
-    "test-parallel": "node index --parallel project.clj",
+    "test": "npm run test-simple && npm run test-all && npm run test-frequencies && npm run test-parallel",
+    "test-simple": "node index index.js",
+    "test-all": "node index --all index.js",
+    "test-frequencies": "node index --frequencies index.js",
+    "test-parallel": "node index --parallel index.js",
     "start": "npm run watch",
     "build": "lein cljsbuild once",
     "watch": "lein cljsbuild auto"

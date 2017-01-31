@@ -1,8 +1,8 @@
 (ns wordcount.frequencies.core
-    (:require [wordcount.word :as word]))
+    (:require [wordcount.word :refer [inWord]]))
 
 
-(defn ofWords [data]
+(defn frequencies [data]
   (let [updateWord (fn [now was char word]
                       (if (true? now)
                         (conj word char)
@@ -47,7 +47,7 @@
       (let [char (first chars)]
         (if (nil? char)
           (outputIt (updateWords false was word words))
-          (let [now (word/inWord char)]
+          (let [now (inWord char)]
             (recur
               now
               (rest chars)

@@ -1,8 +1,8 @@
 (ns wordcount.all.core
-    (:require [wordcount.word :as word]))
+    (:require [wordcount.word :refer [inWord]]))
 
 
-(defn stat [text]
+(defn all [text]
     (loop [word false
            data text
            words 0
@@ -11,7 +11,7 @@
         (let [head (first data)]
           (if (nil? head)
             (println (str "line:" lines ", words:" words ", chars:" chars))
-            (let [ok (word/inWord head)]
+            (let [ok (inWord head)]
               (recur
                 ok
                 (rest data)
