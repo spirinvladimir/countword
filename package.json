@@ -4,6 +4,10 @@
   "bin": {
     "wordcount": "./index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spirinvladimir/wordcount.git"
+  },
   "scripts": {
     "test": "npm run test-simple && npm run test-all && npm run test-frequencies && npm run test-parallel",
     "test-simple": "node index index.js",
