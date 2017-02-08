@@ -1,9 +1,9 @@
-(defproject wordcount "1.0.4"
+(defproject wordcount "1.0.5"
 
   :min-lein-version "2.5.3"
 
   :dependencies [[org.clojure/clojure "1.9.0-alpha14"]
-                 [org.clojure/clojurescript "1.9.293"]]
+                 [org.clojure/clojurescript "1.9.456"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]]
 
